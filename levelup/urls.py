@@ -24,7 +24,16 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
-from levelupapi.views import register_user, login_user
+from rest_framework import routers
+from levelupapi.views import register_user, login_user, GameTypeView, EventView, GameView
+
+router = routers.DefaultRouter(trailing_slash=False)
+# The first parameter, r'gametypes, is setting up the url
+# The second GameTypeView is telling the server which view to use when it sees that url
+# The third, gametype, is called the base name
+router.register(r'gametypes', GameTypeView, 'gametype')
+router.register(r'events', EventView, 'event')
+router.register(r'games', GameView, 'game')
 
 urlpatterns = [
     # Requests to http://localhost:8000/register will be routed to the register_user function
@@ -32,4 +41,5 @@ urlpatterns = [
     # Requests to http://localhost:8000/login will be routed to the login_user function
     path('login', login_user),
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 ]

@@ -44,6 +44,6 @@
 - [Documentation: Providing initial data for models](https://docs.djangoproject.com/en/4.2/howto/initial-data/)
 - [How to pre load Data Video](https://www.youtube.com/watch?v=1_MROM737FI)
 
-- can start solely the server with `python3 manage.py runserver` command
+- can start solely the server with `python3 manage.py runserver` command or `./manage.py runserver`
 - Username is `Carrie1945`
 - Password is `me`

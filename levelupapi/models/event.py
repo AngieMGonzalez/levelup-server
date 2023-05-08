@@ -8,7 +8,6 @@ class Event(models.Model):
     time = models.TimeField()
     host = models.ForeignKey("Gamer", on_delete=models.CASCADE, related_name="hosted_events")
     attendees = models.ManyToManyField(Gamer, related_name="event_attendees")
-    # ?
     game = models.ForeignKey("Game", on_delete=models.CASCADE, related_name="events")
 
 # The related_name parameter specifies the name of the reverse relation
