@@ -39,3 +39,7 @@
 - Model Field Types - All the options for data types in a model [4.2 Django Field Types Docs](https://docs.djangoproject.com/en/4.2/ref/models/fields/#field-types)
 - [One to Many Relationships - How to add a foreign key to a model](https://docs.djangoproject.com/en/4.2/topics/db/models/#many-to-one-relationships)
 - [Many to Many Relationships - How to set up a Many-Many Relationship](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django) 🌭🌭🌭🌭🌭
+
+## Fixtures
+- [Documentation: Providing initial data for models](https://docs.djangoproject.com/en/4.2/howto/initial-data/)
+- [How to pre load Data Video](https://www.youtube.com/watch?v=1_MROM737FI)

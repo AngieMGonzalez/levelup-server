@@ -1,0 +1,24 @@
+[
+  {
+      "model": "levelupapi.event",
+      "pk": 1,
+      "fields": {
+          "description": "Monopoly Night! Let's play some board games!",
+          "date": "2023-06-05",
+          "time": "19:30:00",
+          "game": 1,
+          "host": 1
+      }
+  },
+  {
+      "model": "levelupapi.event",
+      "pk": 2,
+      "fields": {
+        "description": "DnD Day. Let's Roll Play!",
+          "date": "2023-05-10",
+          "time": "10:00:00",
+          "game": 2,
+          "host": 1
+      }
+  }
+]
