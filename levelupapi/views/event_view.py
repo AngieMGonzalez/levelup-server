@@ -24,12 +24,35 @@ class EventView(ViewSet):
 
     def list(self, request):
         """Handle GET requests to get ALL events
+        This is the method that will be called when a GET request is made to the URL associated with this viewset
+        It takes in two arguments, self and request
 
         Returns:
             Response -- JSON serialized list of events
         """
+        # This line retrieves all the Event objects from the 
+        # database using the Django Object-Relational Mapping (ORM) system
         events = Event.objects.all()
+
+        # This code block checks if the GET request has
+        # a query parameter named game
+        # If it does, it sets the variable game_id
+        # to the value of the query parameter
+        # Then it filters the events queryset 
+        # to include only events where the game_id matches the game_id variable
+        if "game" in request.query_params:
+            game_id=request.query_params["game"]
+            events = events.filter(game_id=game_id)
+
+        # This line creates an instance of the EventSerializer class,
+        # passing in the events queryset as the data to be serialized
+        # The many=True argument specifies that there are multiple Event objects to be serialized
         serializer = EventSerializer(events, many=True)
+
+        # This line returns an HTTP response with the serialized data
+        # The Response class is provided by Django REST framework
+        # and the serializer.data attribute contains
+        # the serialized representation of the events queryset
         return Response(serializer.data)
 
 class EventSerializer(serializers.ModelSerializer):
