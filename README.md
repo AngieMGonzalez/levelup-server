@@ -18,6 +18,9 @@
 - anyone should be able to schedule an event for any game that has been added
 -  I want people to say if they are coming. That way the person holding the event knows how many people to expect
 - anyone can sign up for any event
+- Migrate Models
+- `python3 manage.py makemigrations levelupapi`
+- `python3 manage.py migrate`
 
 <img width="1310" alt="ERD" src="https://user-images.githubusercontent.com/114124374/236859613-a496fbd0-fb9d-46b8-9789-82f8e145984b.png">
 

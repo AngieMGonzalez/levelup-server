@@ -15,3 +15,16 @@ class Event(models.Model):
 # In this case, the reverse relation can be accessed through Game.game_for_event.
 # for "host" Gamer.organizer_or_host
 # "attendees" Gamer.event_has_people.
+
+# does not actually exist in DB
+@property
+def joined(self):
+    """joining and leaving events
+    """
+    return self.__joined
+# just declaring joined
+
+@joined.setter
+def joined(self, value):
+    self.__joined = value
+# setter func to assign value elsewhere
