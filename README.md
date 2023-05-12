@@ -47,3 +47,20 @@
 - can start solely the server with `python3 manage.py runserver` command or `./manage.py runserver`
 - Username is `Carrie1945`
 - Password is `me`
+
+## Custom Actions
+- join
+- https://github.com/nashville-software-school/bangazon-llc/blob/cohort-62/book-3-levelup/chapters/LU_CUSTOM_ACTION.md 
+- a custom action = a method on a ViewSet
+- a custom action allows the client to put a verb at the end of the URL to initiate a custom action
+- a custom action can specify which HTTP methods are supported by it
+- able to create a custom action that includes the pk of obj you want to retrieve from the DB
+- With Django REST Framework, you can create a custom action that your API will support by using the `@action` decorator above a method within a ViewSet
+- For this action, you want a client to make a request to allow a gamer to `sign up` for an `event`
+- There will also be an action to allow a `gamer` to `leave` an event
+- JSON post body for custom signup POST/create: 
+```
+{
+    "user": 1
+}
+```
