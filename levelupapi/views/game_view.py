@@ -88,6 +88,14 @@ class GameView(ViewSet):
         # why no gamer? why isn't that necessary?
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+    def destroy(self, request, pk):
+        """destroy / delete a row from DB
+        """
+        game = Game.objects.get(pk=pk)
+        game.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+
 class GameSerializer(serializers.ModelSerializer):
     """JSON serializer for game types
     """
