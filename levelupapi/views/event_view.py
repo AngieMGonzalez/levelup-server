@@ -91,6 +91,15 @@ class EventView(ViewSet):
             game_id=request.query_params["game"]
             events = events.filter(game_id=game_id)
 
+        # Set the `joined` property on every event
+        for event in events:
+            # Check to see if the gamer is in the attendees list on the event
+            gamer = Gamer.objects.get(user=request.auth.user)
+            # logic just for one user
+            # event.joined will either be T/F
+            # if the logged in gamer is attendees array on this event
+            event.joined = gamer in event.attendees.all()
+
         # This line creates an instance of the EventSerializer class,
         # passing in the events queryset as the data to be serialized
         # The many=True argument specifies that there are multiple Event objects to be serialized
@@ -138,6 +147,6 @@ class EventSerializer(serializers.ModelSerializer):
         """holds the configuration for the serializer
         """
         model = Event
-        fields = ('id', 'description', 'date', 'time', 'game', 'host', 'attendees')
+        fields = ('id', 'description', 'date', 'time', 'game', 'host', 'attendees', 'joined')
         depth = 1
 # fix this depth later
