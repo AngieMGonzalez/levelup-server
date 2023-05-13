@@ -148,5 +148,5 @@ class EventSerializer(serializers.ModelSerializer):
         """
         model = Event
         fields = ('id', 'description', 'date', 'time', 'game', 'host', 'attendees', 'joined')
-        depth = 1
+        depth = 2
 # fix this depth later
