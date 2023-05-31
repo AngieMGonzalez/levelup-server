@@ -67,3 +67,7 @@
     "user": 1
 }
 ```
+
+# Time for Tests
+- https://github.com/nashville-software-school/bangazon-llc/blob/cohort-62/book-4-bangazon/chapters/TESTING.md
+- Run `python3 manage.py test tests -v 1` to execute all test classes.
