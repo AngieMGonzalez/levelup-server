@@ -77,7 +77,7 @@ class EventView(ViewSet):
         Returns:
             Response -- JSON serialized list of events
         """
-        # This line retrieves all the Event objects from the 
+        # This line retrieves all the Event objects from the
         # database using the Django Object-Relational Mapping (ORM) system
         events = Event.objects.all()
 
@@ -148,5 +148,5 @@ class EventSerializer(serializers.ModelSerializer):
         """
         model = Event
         fields = ('id', 'description', 'date', 'time', 'game', 'host', 'attendees', 'joined')
-        depth = 1
+        depth = 2
 # fix this depth later

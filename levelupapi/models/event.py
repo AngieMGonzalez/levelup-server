@@ -17,14 +17,14 @@ class Event(models.Model):
 # "attendees" Gamer.event_has_people.
 
 # does not actually exist in DB
-@property
-def joined(self):
-    """joining and leaving events
-    """
-    return self.__joined
-# just declaring joined
+    @property
+    def joined(self):
+        """joining and leaving events
+        """
+        return self.__joined
+    # just declaring joined
 
-@joined.setter
-def joined(self, value):
-    self.__joined = value
-# setter func to assign value elsewhere
+    @joined.setter
+    def joined(self, value):
+        self.__joined = value
+    # setter func to assign value elsewhere
