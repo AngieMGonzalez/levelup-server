@@ -68,6 +68,13 @@
 }
 ```
 
-# Time for Tests
+# Time for test_
 - https://github.com/nashville-software-school/bangazon-llc/blob/cohort-62/book-4-bangazon/chapters/TESTING.md
-- Run `python3 manage.py test tests -v 1` to execute all test classes.
+- Create `tests` directory in project
+- Create `tests/__init__.py` module
+- Create `tests/{resource_name}_tests.py` module for each resource
+- Write test classes in each test module
+Import test classes into `__init__.py`
+- Run `python3 manage.py test tests -v 1` to execute all test classes
+- All functions that contain integration tests must start with `test_`
+- i.e. If the test is for modifying a game is `test_modifying_a_game_record_via_put_method()`
