@@ -55,13 +55,13 @@ class GameView(ViewSet):
         # )
 
         # for testing delete
-        # try:
-        game = Game.objects.get(pk=pk)
-        serializer = GameSerializer(game)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        try:
+            game = Game.objects.get(pk=pk)
+            serializer = GameSerializer(game)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except:
+            return Response(None, status=status.HTTP_404_NOT_FOUND)
         # equivalent to _set_headers and wfile.write functions
-        # except: 
-            # return Response(None, status=status.HTTP_404_NOT_FOUND)
 
 
     def list(self, request):
