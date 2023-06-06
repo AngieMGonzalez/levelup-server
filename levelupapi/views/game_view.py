@@ -53,9 +53,14 @@ class GameView(ViewSet):
         # from levelupapi_game
         # where id = ?""",(pk,)
         # )
-        game = Game.objects.get(pk=pk)
-        serializer = GameSerializer(game)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+
+        # for testing delete
+        try:
+            game = Game.objects.get(pk=pk)
+            serializer = GameSerializer(game)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except:
+            return Response(None, status=status.HTTP_404_NOT_FOUND)
         # equivalent to _set_headers and wfile.write functions
 
 
@@ -76,7 +81,7 @@ class GameView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-        # has to match client request 
+        # has to match client request
         game = Game.objects.get(pk=pk)
         game.title = request.data["title"]
         game.maker = request.data["maker"]
