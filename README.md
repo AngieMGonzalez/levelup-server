@@ -78,3 +78,24 @@ Import test classes into `__init__.py`
 - Run `python3 manage.py test tests -v 1` to execute all test classes
 - All functions that contain integration tests must start with `test_`
 - i.e. If the test is for modifying a game is `test_modifying_a_game_record_via_put_method()`
+
+## Django Templates
+- [Django Views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/intro/)
+- [Python Comprehension](https://www.geeksforgeeks.org/comprehensions-in-python/)
+- [Executing SQL within Django](https://docs.djangoproject.com/en/4.2/topics/db/sql/#executing-custom-sql-directly)
+- [Django Templates](https://docs.djangoproject.com/en/4.2/topics/templates/)
+- Setup: Be in your LevelUp project directory. Create a new application for producing HTML reports.
+- `python3 manage.py startapp levelupreports`
+- Add `levelupreports` to `INSTALLED_APPS = []` in the `settings.py` module
+- Delete the `models.py` and `views.py` modules in the application
+- Create a `levelup/levelupreports/views` directory and create the following two modules in it: `__init__.py` + `helpers.py`
+- Create a `levelup/levelupreports/templates` directory
+- Create a `levelup/levelupreports/urls.py` module
+- Note: There's a class view with a get method. Instead of `list`, `retrieve`, `update`, and `destroy` like the *Rest Framework* views have, *basic django* views have `get`, `post`, `put`, and `delete`. Notice that all the imports are coming from `django` instead of `rest_framework`. That is how you can tell this will be a *django* view. While we could still use the `ORM` to retrieve data from the database, `SQL` is an important tool to continue practicing.
+- `{{ user.full_name }}`
+- ```
+{% for games in games %}
+    {{ game.title }}
+{% endfor %}
+```
+- `if/then` blocks
